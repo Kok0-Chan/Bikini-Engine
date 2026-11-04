@@ -1,0 +1,67 @@
+ДОКУМЕНТАЦИЯ К ДВИЖКУ BIKINI ENGINE!
+Привет! не знаю, можно ли называть это движком, но все же. Давайте рассмотрим ИДЕАЛЬНУЮ структуру проекта, при которой игра будет красиво выглядеть:
+ПАПКА С ИГРОЙ:
+    -main.py (сама игра)
+    -BikiniEngine.py (Движок)
+    -art.txt * n (nное колличесво ваших art для игры)
+ЧТО ТАКОЕ ART?????
+art - рисунок, который отображаеться в верхней части экрана почти все время игры. Советую для рисовки
+art использовать сайт: https://www.asciiart.eu/ascii-draw-studio/app . Если вы играете на Linux, то
+приятное соотношение окна терминала 80x24. ПРИ УМЕНЬШЕНИИ ПО ОСИ X ИЗОБРАЖЕНИЕ ИСКАЖАЕТЬСЯ! Если вам
+хочетьсясделать соотноешние больше, то рисуйте рамки art больше.
+Рассмотрим функции, которые вы можете использовать в своем проекте:
+-clear: очищает терминал, не оставляя ничего.
+-draw: Основная функция выведения изображения на экран. Рассмотрим аргументы, которые мы можем передать функции:
+
+ПРИМЕР программы:
+
+import BikiniEngine <-- ОБЯЗАТЕЛЬНО пропишите в начале проекта
+
+BikiniEngine.draw("название вашего art.txt", "текст, который плавно появитсья", задержка ввода сек)
+КАК СДЕЛАТЬ ВЫБОР В ИГРЕ?
+Все до ужаса просто. присвойте переменной функцию BikiniEngine.draw и сделайте известную вам конструкцию if else
+Пример:
+t = BikiniEngine.draw("human.txt", "Shall we help Vladik’s mom, or not? ", 0.05)
+    if t == "yes":
+        BikiniEngine.draw("mama_kill_denis.txt", "We buried Denis in the courtyard of School No. 25. ", 0.05)
+        BikiniEngine.draw("the_end_screen.txt", "The end!", 0.05)
+    else:
+        BikiniEngine.draw("vladik_die.txt", "Vladik burst into tears and fell down the stairs.", 0.05)
+        BikiniEngine.draw("the_end_screen.txt", "The end!", 0.05)
+Пока что на этом все. Проект будет развиваться и надеюсь, что вы сделаете прикольные игры :D
+
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+
+
+DOCUMENTATION FOR THE BIKINI ENGINE!
+Hi! I’m not sure if you could even call it an "engine," but let’s go with it. Let’s look at the IDEAL project structure to ensure your game looks great:
+GAME FOLDER:
+-main.py (the game itself)
+-BikiniEngine.py (the engine)
+-art.txt * n (any number of art files for your game)
+WHAT IS "ART"?????
+"Art" refers to a drawing that is displayed at the top of the screen for most of the gameplay. For creating this art, I recommend using this website: https://www.asciiart.eu/ascii-draw-studio/app. If you are playing on Linux, an 80x24 terminal window size works well. NOTE: Reducing the width (X-axis) will distort the image! If you want a larger aspect ratio, simply make the borders of your art larger.
+Here are the functions you can use in your project:
+-clear: Clears the terminal completely.
+-draw: The primary function for displaying an image on the screen. Let’s look at the arguments you can pass to this function:
+
+EXAMPLE program:
+
+import BikiniEngine <-- MUST be included at the beginning of your project
+
+BikiniEngine.draw("name_of_your_art.txt", "text that will fade in", input_delay_in_seconds)
+HOW DO YOU CREATE CHOICES IN THE GAME?
+It’s incredibly simple. Assign the `BikiniEngine.draw` function to a variable and use an `if-else` construct—you’re likely already familiar with how those work.
+Example:
+t = BikiniEngine.draw("human.txt", "Shall we help Vladik’s mom, or not? ", 0.05)
+if t == "yes":
+BikiniEngine.draw("mama_kill_denis.txt", "We buried Denis in the courtyard of School No. 25. ", 0.05)
+BikiniEngine.draw("the_end_screen.txt", "The end!", 0.05)
+else:
+BikiniEngine.draw("vladik_die.txt", "Vladik burst into tears and fell down the stairs.", 0.05)
+BikiniEngine.draw("the_end_screen.txt", "The end!", 0.05)
+That’s all for now. The project will continue to evolve, and I hope you’ll create some cool games! :D
+
+
