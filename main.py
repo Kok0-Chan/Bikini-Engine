@@ -4,6 +4,7 @@ user_massage = BikiniEngine.draw("start_screen.txt", "GAME FOR EXAMPLE", 0.05)
 if user_massage == "exit":
     exit()
 elif user_massage == "start":
+    BikiniEngine.animation("thunder.txt")
     BikiniEngine.draw("first_screen.txt", "This game was created as an example. Now I will show you what the Bikini engine is capable of.", 0.05)
     BikiniEngine.draw("human.txt", "This is a Vladik", 0.05)
     BikiniEngine.draw("human.txt", "He very bad person.", 0.05)
