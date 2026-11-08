@@ -1,4 +1,4 @@
-set_pictures<[ Перекрёсток ]>
+set_pictures<[pic.txt]>
 draw<Ты стоишь на перекрёстке.>
 
 choice<Куда пойдёшь?>

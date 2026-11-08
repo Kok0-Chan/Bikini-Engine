@@ -44,13 +44,9 @@ def print_smooth(text):
 
 
 def parse_line(line):
-    """
-    Разбирает строку вида 'command<arguments>' в кортеж (command, arguments).
-    Если в строке нет <...> — возвращает None (это не команда).
-    """
     command = line.partition("<")[0].strip().lower()
     if '<' in line and '>' in line:
-        arguments = line.split('<', 1)[1].split('>', 1)[0]
+        arguments = line[line.index('<') + 1 : line.index('>')]   # строка между < >
         return command, arguments
     return None
 
@@ -129,7 +125,14 @@ def run_lines(lines):
 
             # ---------- set_pictures: задать текущую картинку ----------
             case "set_pictures":
-                pictures = arguments
+                filename = str(arguments).strip()
+                filename = filename.strip("[]")
+                path = os.path.join("art", filename)
+                try:
+                    with open(path, "r", encoding="utf-8") as file:
+                        pictures = file.read()
+                except FileNotFoundError:
+                    pictures = f"[нет файла арта: {path}]"
 
             # ---------- set_flag: включить флаг ----------
             case "set_flag":
