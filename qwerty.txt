@@ -1,4 +1,4 @@
-set_pictures<[pic.txt]>
+set_pictures<pic.txt>
 draw<Ты стоишь на перекрёстке.>
 
 choice<Куда пойдёшь?>
@@ -14,7 +14,7 @@ option<Направо>
     option<Убежать>
         draw<Ты убежал. Жив, но без славы.>
     choice<end>
-DraW<Ты умер иди нахуй>
+DraW<Ты умер>
 choice<end>
 
 draw<Конец.>
